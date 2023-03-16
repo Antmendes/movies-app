@@ -1,0 +1,14 @@
+footer {
+    color: #F48FB1;
+    position: absolute;
+    bottom: 0;
+    height: 20px;
+    width: 100%;
+    text-align: center;
+    font-style: oblique;
+    font-family: 'Open Sans', sans-serif;
+    font-size: .8rem;
+    margin: 0;
+    padding: 0;
+
+}
