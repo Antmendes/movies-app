@@ -1,11 +1,26 @@
-<mat-card >
-    <mat-toolbar >
-        <mat-card-content>
-            <input type="text" matInput>
+<mat-toolbar class="header-container">
+    <div class="search">
+        <button mat-raised-button color="primary" id="myApp">MyApp</button>
+        <input type="text" matInput>
+        <button mat-icon-button color="primary" id="search-btn">
+            <mat-icon>search</mat-icon>
+          </button>
+    </div>
+    <div *ngIf="!sizeBig; else menuBig">
+        <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Movies</button>
+            <button mat-menu-item>Series</button>
+            <button mat-menu-item disabled="">MyList</button>
+        </mat-menu>
+    </div>
+   
+    <ng-template #menuBig>
+        <div class="menuBig" >
             <button mat-button color="primary">MOVIES</button>
             <button mat-button color="primary">SERIES</button>
-            <button mat-stroked-button >Accent</button>
-        </mat-card-content>
-    </mat-toolbar>
-</mat-card> 
-<mat-progress-bar mode="indeterminate"></mat-progress-bar>   
+            <button mat-stroked-button>MyList</button>
+        </div>
+    </ng-template>
+</mat-toolbar>
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
